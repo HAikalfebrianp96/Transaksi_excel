@@ -50,7 +50,7 @@ For further information, like the background of this dataset, dataset characteri
 5. Connect to hosted runtime.
 6. Lastly, run the code cells.
 
-### `https://transaksiexcel-imkfozgrtxymmh9pp5cygg.streamlit.app/`
+### `visualisasi.app/`
 1. Download this project.
 2. Install the Streamlit in your terminal or command prompt using `pip install streamlit`. Install another libraries like pandas, numpy, scipy, matplotlib, and seaborn if you haven't.
 3. Please note, don't move the csv file because it acts a data source. keep it in one folder as dashboard.py
