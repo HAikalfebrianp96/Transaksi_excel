@@ -42,7 +42,7 @@ For further information, like the background of this dataset, dataset characteri
 **Note: Numbers 1 to 3 are in the dicoding-collection-exercise and number 4 is in dashboard.**
 
 ## 3. Getting Started
-### `notebook.ipynb`
+### `bike_share_notebook.ipynb`
 1. Download this project.
 2. Open your favorite IDE like Jupyter Notebook or Google Colaboratory (but in here I will use Google Colab).
 3. Create a New Notebook.
@@ -50,7 +50,7 @@ For further information, like the background of this dataset, dataset characteri
 5. Connect to hosted runtime.
 6. Lastly, run the code cells.
 
-### `dashboard/dashboard.py`
+### `https://transaksiexcel-imkfozgrtxymmh9pp5cygg.streamlit.app/`
 1. Download this project.
 2. Install the Streamlit in your terminal or command prompt using `pip install streamlit`. Install another libraries like pandas, numpy, scipy, matplotlib, and seaborn if you haven't.
 3. Please note, don't move the csv file because it acts a data source. keep it in one folder as dashboard.py
