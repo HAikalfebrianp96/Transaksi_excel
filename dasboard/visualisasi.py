@@ -7,7 +7,7 @@ import streamlit as st
 sns.set(style='dark')
 
 # Menyiapkan data day_df
-day_df = pd.read_csv(r"C:\Users\Lenovo\Downloads\mixel.csv")
+day_df = pd.read_csv(r"dasboard/mixel.csv")
 day_df.head()
 
 # Menghapus kolom yang tidak diperlukan
