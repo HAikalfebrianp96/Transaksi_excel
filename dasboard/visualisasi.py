@@ -370,19 +370,27 @@ axes[2].axis('off')
 plt.tight_layout()
 st.pyplot(fig)
 analysis_text = '''
-<h2 style="color:#0077b6;">Analisis:</h2>
+<h2 style="color:#0077b6;">Analisis</h2>
 
-<h3 style="color:#ef476f;">Tren Musiman:</h3>
-<p>Dalam industri penyewaan sepeda di Indonesia, ada tren musiman yang jelas. Permintaan tertinggi terjadi selama musim kemarau (Mei-Oktober), sementara permintaan terendah terjadi selama musim hujan (November-April).</p>
+<h3 style="color:#ef476f;">Kesimpulan:</h3>
+<ul>
+  <li>Hari kerja memiliki jumlah persewaan sepeda tertinggi (6.428.488).</li>
+  <li>Liburan memiliki jumlah persewaan sepeda kedua tertinggi (4.584.820).</li>
+  <li>Hari biasa memiliki jumlah persewaan sepeda terendah (2.000.538).</li>
+</ul>
 
-<h3 style="color:#ef476f;">Faktor Penentu:</h3>
-<p>Cuaca adalah faktor kunci yang memengaruhi tren musiman ini. Di musim kemarau, cuaca cerah dan minim hujan membuat orang lebih nyaman untuk bersepeda. Sebaliknya, di musim hujan, cuaca basah dan angin membuat orang enggan untuk bersepeda.</p>
+<h3 style="color:#ef476f;">Analisis:</h3>
+<ul>
+  <li>Perbedaan signifikan terlihat antara jumlah persewaan pada cuaca cerah/berawan sebagian dan cuaca buruk. Hal ini menunjukkan bahwa cuaca memiliki pengaruh besar pada tingkat penggunaan sepeda bersama.</li>
+  <li>Jumlah persewaan pada hari libur lebih tinggi daripada hari biasa. Hal ini menunjukkan bahwa orang lebih memilih untuk menggunakan sepeda bersama pada akhir pekan dan hari libur.</li>
+</ul>
 
-<h3 style="color:#ef476f;">Hari-Hari Dengan Permintaan Tinggi:</h3>
-<p>Selain tren musiman, ada juga hari-hari tertentu yang menunjukkan permintaan sewa sepeda yang lebih tinggi, seperti akhir pekan dan hari libur nasional. Ini menunjukkan bahwa banyak orang memilih untuk menggunakan sepeda untuk beraktivitas di luar ruangan pada hari-hari tersebut.</p>
-
-<h2 style="color:#0077b6;">Kesimpulan:</h2>
-<p>Tren musiman dan hari-hari dengan permintaan tinggi dalam industri penyewaan sepeda menunjukkan adanya peluang besar bagi perusahaan penyewaan sepeda untuk meningkatkan pendapatan mereka. Perusahaan dapat menggunakan data ini untuk merencanakan strategi bisnis mereka dan memastikan bahwa mereka memiliki persediaan sepeda yang memadai untuk memenuhi permintaan.</p>
+<h2 style="color:#0077b6;">Kesimpulan Secara Keseluruhan :</h2>
+<ul>
+  <li> Tingkat penggunaan sepeda bersama paling tinggi saat cuaca cerah/berawan sebagian (musim panas/semi), hari kerja, dan jam sibuk.</li>
+  <li> Faktor yang paling mempengaruhi penggunaan adalah hari kerja, diikuti oleh cuaca/musim .</li>
+  <li> Penggunaan sepeda bersama lebih rendah saat cuaca buruk (dingin/hujan), hari libur/biasa, dan jam non-sibuk.</li>
+</ul>
 '''
 
 st.markdown(analysis_text, unsafe_allow_html=True)
