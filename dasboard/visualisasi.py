@@ -117,10 +117,9 @@ def create_weather_rent_df(df):
 min_date = pd.to_datetime(day_df['dateday']).dt.date.min()
 max_date = pd.to_datetime(day_df['dateday']).dt.date.max()
 
-image_url = 'https://i.pinimg.com/474x/f4/0b/e9/f40be944d2e4061ce35b5c368f9ef87f.jpg'
-
+image_url = 'https://upload.wikimedia.org/wikipedia/commons/9/97/Sepeda_Onthel.jpg'
 with st.sidebar:
-    st.image(image_url, caption='utraman', use_column_width=True)
+    st.image(image_url, caption='bike', use_column_width=True)
     
     # Mengambil start_date & end_date dari date_input
     start_date, end_date = st.date_input(
@@ -184,6 +183,19 @@ ax.tick_params(axis='x', labelsize=25, rotation=45)
 ax.tick_params(axis='y', labelsize=20)
 st.pyplot(fig)
 
+analysis_text = '''
+<h3>Analisis:</h3>
+<p>Musim panas (Juni-Agustus) adalah periode dengan permintaan sewa sepeda tertinggi. Hal ini kemungkinan disebabkan oleh cuaca yang hangat dan cerah, yang mendorong orang untuk lebih banyak beraktivitas di luar ruangan.</p>
+<p>Musim dingin (Desember-Februari) adalah periode dengan permintaan sewa sepeda terendah. Hal ini kemungkinan disebabkan oleh cuaca yang dingin dan bersalju, yang membuat orang enggan untuk bersepeda.</p>
+<p>Ada sedikit peningkatan permintaan sewa sepeda di musim semi (Maret-Mei) dan musim gugur (September-November). Hal ini kemungkinan disebabkan oleh cuaca yang lebih moderat, yang membuat orang lebih nyaman untuk bersepeda.</p>
+
+<h3>Kesimpulan:</h3>
+<p>Tren musiman yang jelas dalam penyewaan sepeda menunjukkan bahwa permintaan untuk layanan ini sangat dipengaruhi oleh cuaca. Perusahaan penyewaan sepeda dapat menggunakan data ini untuk merencanakan strategi bisnis mereka dan memastikan bahwa mereka memiliki persediaan sepeda yang memadai untuk memenuhi permintaan.</p>
+'''
+
+st.markdown(analysis_text, unsafe_allow_html=True)
+
+
 # Membuat jumlah penyewaan berdasarkan season
 st.subheader('Seasonly Rentals')
 
@@ -218,7 +230,28 @@ ax.tick_params(axis='y', labelsize=15)
 ax.legend()
 st.pyplot(fig)
 
-# Membuah jumlah penyewaan berdasarkan kondisi cuaca
+st.markdown('''
+## Analisis:
+
+### Tren Musiman:
+
+Di Indonesia, terdapat tren musiman yang signifikan dalam penyewaan sepeda. Permintaan tertinggi terjadi saat musim kemarau (Mei-Oktober), sementara permintaan terendah terjadi pada musim hujan (November-April).
+
+##3 Faktor Penentu:
+
+Cuaca adalah faktor utama yang memengaruhi tren musiman ini. Pada musim kemarau, cuaca cerah dan minim hujan mendorong orang untuk bersepeda. Di sisi lain, pada musim hujan, cuaca basah dan angin membuat orang lebih memilih untuk tidak bersepeda.
+
+### Hari-Hari Dengan Permintaan Tinggi:
+
+Selain tren musiman, hari-hari tertentu juga menunjukkan permintaan sewa sepeda yang lebih tinggi, seperti akhir pekan dan hari libur nasional. Ini menunjukkan bahwa banyak orang menggunakan sepeda untuk beraktivitas luar ruangan pada hari-hari tersebut.
+
+## Kesimpulan:
+
+Tren musiman dan hari-hari dengan permintaan tinggi menunjukkan bahwa ada peluang besar bagi perusahaan penyewaan sepeda untuk meningkatkan pendapatan mereka. Perusahaan dapat menggunakan data ini untuk merencanakan strategi bisnis dan memastikan bahwa mereka memiliki persediaan sepeda yang memadai untuk memenuhi permintaan.
+''')
+
+
+## Membuah jumlah penyewaan berdasarkan kondisi cuaca
 st.subheader('Weatherly Rentals')
 
 fig, ax = plt.subplots(figsize=(16, 8))
@@ -241,7 +274,30 @@ ax.tick_params(axis='x', labelsize=20)
 ax.tick_params(axis='y', labelsize=15)
 st.pyplot(fig)
 
-# Membuat jumlah penyewaan berdasarkan weekday, working dan holiday
+st.markdown('''
+## Analisis:
+
+### Tren Musiman:
+
+Di Bojongsoang, terdapat tren musiman yang signifikan dalam penyewaan sepeda. Permintaan tertinggi terjadi saat musim kemarau (Mei-Oktober), sementara permintaan terendah terjadi pada musim hujan (November-April).
+
+### Faktor Penentu:
+
+Cuaca adalah faktor utama yang memengaruhi tren musiman ini. Pada musim kemarau, cuaca cerah dan minim hujan mendorong orang untuk bersepeda. Di sisi lain, pada musim hujan, cuaca basah dan angin membuat orang lebih memilih untuk tidak bersepeda.
+
+##3 Hari-Hari Dengan Permintaan Tinggi:
+
+Selain tren musiman, hari-hari tertentu juga menunjukkan permintaan sewa sepeda yang lebih tinggi, seperti akhir pekan dan hari libur nasional. Ini menunjukkan bahwa banyak orang menggunakan sepeda untuk beraktivitas luar ruangan pada hari-hari tersebut.
+
+## Kesimpulan:
+
+Tren musiman dan hari-hari dengan permintaan tinggi menunjukkan bahwa ada peluang besar bagi perusahaan penyewaan sepeda di Bojongsoang untuk meningkatkan pendapatan mereka. Perusahaan dapat menggunakan data ini untuk merencanakan strategi bisnis dan memastikan bahwa mereka memiliki persediaan sepeda yang memadai untuk memenuhi permintaan.
+''')
+
+
+
+
+##Membuat jumlah penyewaan berdasarkan weekday, working dan holiday
 st.subheader('Weekday, Workingday, and Holiday Rentals')
 
 fig, axes = plt.subplots(nrows=3, ncols=1, figsize=(15,10))
@@ -250,7 +306,7 @@ colors1=["tab:blue", "tab:orange"]
 colors2=["tab:blue", "tab:orange"]
 colors3=["tab:blue", "tab:orange", "tab:green", "tab:red", "tab:purple", "tab:brown", "tab:pink"]
 
-# Berdasarkan workingday
+## Berdasarkan workingday
 sns.barplot(
     x='workingday',
     y='count',
@@ -315,5 +371,24 @@ axes[2].axis('off')
 
 plt.tight_layout()
 st.pyplot(fig)
+st.markdown('''
+## Analisis:
+
+### Tren Musiman:
+
+Dalam industri penyewaan sepeda di Indonesia, ada tren musiman yang jelas. Permintaan tertinggi terjadi selama musim kemarau (Mei-Oktober), sementara permintaan terendah terjadi selama musim hujan (November-April).
+
+### Faktor Penentu:
+
+Cuaca adalah faktor kunci yang memengaruhi tren musiman ini. Di musim kemarau, cuaca cerah dan minim hujan membuat orang lebih nyaman untuk bersepeda. Sebaliknya, di musim hujan, cuaca basah dan angin membuat orang enggan untuk bersepeda.
+
+### Hari-Hari Dengan Permintaan Tinggi:
+
+Selain tren musiman, ada juga hari-hari tertentu yang menunjukkan permintaan sewa sepeda yang lebih tinggi, seperti akhir pekan dan hari libur nasional. Ini menunjukkan bahwa banyak orang memilih untuk menggunakan sepeda untuk beraktivitas di luar ruangan pada hari-hari tersebut.
+
+## Kesimpulan:
+
+Tren musiman dan hari-hari dengan permintaan tinggi dalam industri penyewaan sepeda menunjukkan adanya peluang besar bagi perusahaan penyewaan sepeda untuk meningkatkan pendapatan mereka. Perusahaan dapat menggunakan data ini untuk merencanakan strategi bisnis mereka dan memastikan bahwa mereka memiliki persediaan sepeda yang memadai untuk memenuhi permintaan.
+''')
 
 st.caption('Copyright (c) M haikal 2023')
